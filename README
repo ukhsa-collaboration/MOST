@@ -125,20 +125,20 @@ Output files
 1. <Sample ID>_MLST results.csv: describes allele designation and associated confidence quality metrics for each assignment
 
 2. <sample ID>_results.xml: The XML file will report
-§	sample ID : sample identifier
-§	Workflow value :  tested isolate, e.g. salmonella-typing
-§	Version : software version number 
-§	MLST value : ST value 
-§	Profile: allele variant for each locus
-§	QC mean consensus depth: Single value representing the minimum average consensus depth of all loci
-§	QC mean consensus depth of each locus: An average of the consensus depth across the full length of each locus. List of multiple values, one for each locus.
-§	QC max percentage non consensus base: The largest of the maximum percentage non consensus base values from all loci
-§	QC max percentage non consensus base of each locus: The maximum percentage non consensus base values across the full length of each locus. List of multiple values, one for each locus.
-§	QC minimum consensus depth: Single value representing the minimum consensus depth of all loci
-§	QC minimum consensus depth of each locus: Minimum consensus depth across the full length of each locus. List of multiple values, one for each locus.
-§	QC percentage coverage: Percentage coverage across allele length. NB: This value should always be 100% 
-§	Predicted_serotype: Predicted serotype and the number of occurrences associated with the ST in the PHE/Achtmann database. (for ONLY salmonella sample)
-§	Traffic light system: The “MLST typing software” validates the results based on coverage metrics and writes a cut-off value standard based on the “Traffic light system. 
+	-	sample ID : sample identifier
+	-	Workflow value :  tested isolate, e.g. salmonella-typing
+	-	Version : software version number 
+	-	MLST value : ST value 
+	-	Profile: allele variant for each locus
+	-	QC mean consensus depth: Single value representing the minimum average consensus depth of all loci
+	-	QC mean consensus depth of each locus: An average of the consensus depth across the full length of each locus. List of multiple values, one for each locus.
+	-	QC max percentage non consensus base: The largest of the maximum percentage non consensus base values from all loci
+	-	QC max percentage non consensus base of each locus: The maximum percentage non consensus base values across the full length of each locus. List of multiple values, one for each locus.
+	-	QC minimum consensus depth: Single value representing the minimum consensus depth of all loci
+	-	QC minimum consensus depth of each locus: Minimum consensus depth across the full length of each locus. List of multiple values, one for each locus.
+	-	QC percentage coverage: Percentage coverage across allele length. NB: This value should always be 100% 
+	-	Predicted_serotype: Predicted serotype and the number of occurrences associated with the ST in the PHE/Achtmann database. (for ONLY salmonella sample)
+	-	Traffic light system: The “MLST typing software” validates the results based on coverage metrics and writes a cut-off value standard based on the “Traffic light system. 
 	The “Traffic light system” is assigned based on the following cut-off values:
 	i.	The “GREEN traffic light” indication is assigned if the : 
 		max percentage non consensus depth  < 15%  and
