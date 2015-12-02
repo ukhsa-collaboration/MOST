@@ -84,7 +84,7 @@ modification made by  Anthony.Underwood@phe.gov.uk and Rediat.Tewolde@phe.gov.uk
 
 	You can run PMS script by using the following 2 pathways:
 	1.  The script can be run by specifying a workflow and full path to the input directory. The input directory should contain a pair of fastq files.
-		e.g PMS.py -w salmonella-typing  -i < full path to the input directory>
+		e.g PMS.py -w salmonella-typing.1-3-3  -i < full path to the input directory>
 		Note:If you are using a workflow you must specify an input directory
 
 
