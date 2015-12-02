@@ -90,10 +90,10 @@ modification made by  Anthony.Underwood@phe.gov.uk and Rediat.Tewolde@phe.gov.uk
 
 
 	2. The script can be run by specifying the full path of the paired fastq files, MLST database and output directory
-		e.g PMS.py -1 <full fastq paths to the fastq file> -2 <full fastq paths to the fastq file>  -o   <full path to the output directory>  -st <full path to the MLST database>
+		e.g PMS.py -1 <full path to the fastq file> -2 <full path to the fastq file>  -o   <full path to the output directory>  -st <full path to the MLST database>
 
-	Note: If you are passing full fastq paths to the fastq-1 and fastq-2 params, you need also to pass to the -st|--profile_file_directory  param a path to a reference_dir containing 
-	reference fasta files for each gene of interest and a profiles.txt file
+	Note: If you are passing full fastq paths to the fastq -1 and fastq -2 params, you need also to pass to the -st|--profile_file_directory  param a path to a reference_dir containing 
+	reference fasta files for each gene of interest and a profiles.txt files.
 
 
 
@@ -125,31 +125,34 @@ Output files
 1. <Sample ID>_MLST results.csv: describes allele designation and associated confidence quality metrics for each assignment
 
 2. <sample ID>_results.xml: The XML file will report
-	- Id : sample ID (sample identifier)
-	- Workflow value :  tested isolate, e.g. salmonella-typing
-	- Version : software version number
-	- MLST value : ST value
-	- Allele variant: the allele variant for each locus 
-	- QC minimum consensus depth for all loci, QC mean consensus depth for all loci and QC max percentage non consensus base value for all loci
-	- The smallest QC means consensus depth and  QC minimum consensus depth
-	- The largest  maximum percentage non consensus base values from each locus
-	- QC percentage coverage: average percentage coverage across allele length. NB: The QC average percentage coverage should always be 100%.
+§	sample ID : sample identifier
+§	Workflow value :  tested isolate, e.g. salmonella-typing
+§	Version : software version number 
+§	MLST value : ST value 
+§	Profile: allele variant for each locus
+§	QC mean consensus depth: Single value representing the minimum average consensus depth of all loci
+§	QC mean consensus depth of each locus: An average of the consensus depth across the full length of each locus. List of multiple values, one for each locus.
+§	QC max percentage non consensus base: The largest of the maximum percentage non consensus base values from all loci
+§	QC max percentage non consensus base of each locus: The maximum percentage non consensus base values across the full length of each locus. List of multiple values, one for each locus.
+§	QC minimum consensus depth: Single value representing the minimum consensus depth of all loci
+§	QC minimum consensus depth of each locus: Minimum consensus depth across the full length of each locus. List of multiple values, one for each locus.
+§	QC percentage coverage: Percentage coverage across allele length. NB: This value should always be 100% 
+§	Predicted_serotype: Predicted serotype and the number of occurrences associated with the ST in the PHE/Achtmann database. (for ONLY salmonella sample)
+§	Traffic light system: The “MLST typing software” validates the results based on coverage metrics and writes a cut-off value standard based on the “Traffic light system. 
+	The “Traffic light system” is assigned based on the following cut-off values:
+	i.	The “GREEN traffic light” indication is assigned if the : 
+		max percentage non consensus depth  < 15%  and
+		Complete pileup= TRUE and
+		Minimum consensus depth > 2 and
+		Percentage coverage =100  and 
+		ST not "Failed(incomplete locus coverage)
 
- 	-Traffic light system is assigned based on the following cut-off values:
-	
-	I. GREEN traffic light indication is assigned if the :
-		max percentage non consensus depth =  above 15%
-		Validation test = TRUE
-		Minimum consensus depth = greater than 3
-		Percentage coverage =100
+	ii.	The RED traffic light indication is assigned if the : 
+		Complete pileup= FAIL or
+ 		Percentage coverage < 100 or
+`		ST  is  "Failed(incomplete locus coverage)
 
-	II. RED traffic light indication is assigned if the :
-		max percentage non consensus depth =  below 15%
-		Validation test = FAIL
-		Minimum consensus depth = less than 3
-		Percentage coverage = less than 100
-
-	III. AMBER traffic light indication is assigned if the there is no exact fit which matches either GREEN or RED
+	iii.	The “AMBER traffic light” indication is assigned if the there is no exact fit which matches either GREEN or RED
 
 
 
