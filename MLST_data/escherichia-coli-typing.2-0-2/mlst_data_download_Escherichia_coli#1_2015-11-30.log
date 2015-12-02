@@ -1,0 +1,32 @@
+definitions: ecoli.txt
+5439 profiles
+sourced from: http://pubmlst.org/data/profiles/ecoli.txt
+
+locus adk
+adk.fas
+Sourced from http://pubmlst.org/data/alleles/ecoli/adk.tfa
+
+locus fumC
+fumC.fas
+Sourced from http://pubmlst.org/data/alleles/ecoli/fumC.tfa
+
+locus gyrB
+gyrB.fas
+Sourced from http://pubmlst.org/data/alleles/ecoli/gyrB.tfa
+
+locus icd
+icd.fas
+Sourced from http://pubmlst.org/data/alleles/ecoli/icd.tfa
+
+locus mdh
+mdh.fas
+Sourced from http://pubmlst.org/data/alleles/ecoli/mdh.tfa
+
+locus purA
+purA.fas
+Sourced from http://pubmlst.org/data/alleles/ecoli/purA.tfa
+
+locus recA
+recA.fas
+Sourced from http://pubmlst.org/data/alleles/ecoli/recA.tfa
+

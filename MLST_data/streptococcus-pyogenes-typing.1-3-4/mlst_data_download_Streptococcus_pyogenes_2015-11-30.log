@@ -1,0 +1,32 @@
+definitions: spyogenes.txt
+815 profiles
+sourced from: http://pubmlst.org/data/profiles/spyogenes.txt
+
+locus gki
+gki.fas
+Sourced from http://pubmlst.org/data/alleles/spyogenes/gki.tfa
+
+locus gtr
+gtr.fas
+Sourced from http://pubmlst.org/data/alleles/spyogenes/gtr.tfa
+
+locus murI
+murI.fas
+Sourced from http://pubmlst.org/data/alleles/spyogenes/murI.tfa
+
+locus mutS
+mutS.fas
+Sourced from http://pubmlst.org/data/alleles/spyogenes/mutS.tfa
+
+locus recP
+recP.fas
+Sourced from http://pubmlst.org/data/alleles/spyogenes/recP.tfa
+
+locus xpt
+xpt.fas
+Sourced from http://pubmlst.org/data/alleles/spyogenes/xpt.tfa
+
+locus yqiL
+yqiL.fas
+Sourced from http://pubmlst.org/data/alleles/spyogenes/yqiL.tfa
+

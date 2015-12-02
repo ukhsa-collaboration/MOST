@@ -1,0 +1,32 @@
+definitions: saureus.txt
+3106 profiles
+sourced from: http://pubmlst.org/data/profiles/saureus.txt
+
+locus arcc
+arcc.fas
+Sourced from http://pubmlst.org/data/alleles/saureus/arcc.tfa
+
+locus aroe
+aroe.fas
+Sourced from http://pubmlst.org/data/alleles/saureus/aroe.tfa
+
+locus glpf
+glpf.fas
+Sourced from http://pubmlst.org/data/alleles/saureus/glpf.tfa
+
+locus gmk_
+gmk.fas
+Sourced from http://pubmlst.org/data/alleles/saureus/gmk_.tfa
+
+locus pta_
+pta.fas
+Sourced from http://pubmlst.org/data/alleles/saureus/pta_.tfa
+
+locus tpi_
+tpi.fas
+Sourced from http://pubmlst.org/data/alleles/saureus/tpi_.tfa
+
+locus yqil
+yqil.fas
+Sourced from http://pubmlst.org/data/alleles/saureus/yqil.tfa
+

@@ -1,0 +1,156 @@
+README
+======
+PHE Modified mapping base MLST software (PMS) script is a modified version of SRST (version 1) script.  
+
+The purpose of this script is to assign MLST profiles and infer Salmonella serotyping to bacterial genomic sequence data.
+
+Table of content
+----------------
+
+  * Prerequisites
+  * Instruction on how to download MLST database
+  * Running PMS
+  * Output
+
+
+Prerequisites
+----------------
+
+bowtie2/2.1.0
+samtools/0.1.18 ( Please only use VERSION 0.1.18 )
+emboss/6.6.0
+blast+/2.2.27
+python/2.7
+yaml/1.1
+numpy/python2.7/1.7.1
+lxml/python2.7.0/3.2.3
+biopython/python2.7/1.61
+
+
+Instruction on how to download MLST database
+--------------------------------------------
+
+1. Download profiles.txt file which is a tab-delimited text with the first column indicating the ST and subsequent columns indicating the locus variants
+that make up the ST. The first row should indicate the label or name of each locus.
+
+2. Download loci variant sequences. One fasta file per locus saved as [name_of_locus].fas. The fasta sequence should be labelled with allele number
+(e.g. aroe-1, aroe-2) and the locus label must be separated from the allele number by a dash ("-")
+NB: There is a need to make sure the locus name exactly matches the labels used in the profile.txt file.
+
+3. Download a reference file in fasta format and save the files as reference.seq.  Subsequently, index
+the reference sequence by using makeblastdb command. makeblastdb -in reference.seq -dbtype nucl  -out reference
+
+
+Running PMS.py to determine ST
+------------------------------
+	
+	usage: PMS.py [-h]
+	version 1-0, date 19/11/2015. PHE Modified mapping base MLST software (PMS) script is a modified version of SRST version 1 script (http://sourceforge.net/projects/srst/files/?source=navbar), 
+modification made by  Anthony.Underwood@phe.gov.uk and Rediat.Tewolde@phe.gov.uk.
+	
+	optional arguments:
+
+   	-h, --help            show this help message and exit
+  	-input_directory INPUT_DIRECTORY, -i INPUT_DIRECTORY
+                        please provide an input directory
+ 	 --workflow WORKFLOW, -w WORKFLOW
+                        If using a workflow you must specify an input
+                        directory
+
+  	--fastq_1 FASTQ_1, -1 FASTQ_1
+                        Fastq file pair 1
+
+  	--fastq_2 FASTQ_2, -2 FASTQ_2
+                        Fastq file pair 2
+
+  	--profile_file_directory PROFILE_FILE_DIRECTORY, -st PROFILE_FILE_DIRECTORY
+                        MLST database
+
+  	--output_directory OUTPUT_DIRECTORY, -o OUTPUT_DIRECTORY
+                        please provide an output directory
+
+ 	--bowtie BOWTIE, -b BOWTIE
+                        please provide the path for bowtie2
+
+ 	--samtools SAMTOOLS, -sam SAMTOOLS
+                        please provide the path for samtools
+
+  	--log_directory LOG_DIRECTORY, -log LOG_DIRECTORY
+                        please provide the path for log directory
+
+  	--infer_serotype INFER_SEROTYPE, -serotype INFER_SEROTYPE
+                        For Salmonella samples if you want to infer serotype,
+                        please provide a True value
+	
+
+	You can run PMS script by using the following 2 pathways:
+	1.  The script can be run by specifying a workflow and full path to the input directory. The input directory should contain a pair of fastq files.
+		e.g PMS.py -w salmonella-typing  -i < full path to the input directory>
+		Note:If you are using a workflow you must specify an input directory
+
+
+	2. The script can be run by specifying the full path of the paired fastq files, MLST database and output directory
+		e.g PMS.py -1 <full fastq paths to the fastq file> -2 <full fastq paths to the fastq file>  -o   <full path to the output directory>  -st <full path to the MLST database>
+
+	Note: If you are passing full fastq paths to the fastq-1 and fastq-2 params, you need also to pass to the -st|--profile_file_directory  param a path to a reference_dir containing 
+	reference fasta files for each gene of interest and a profiles.txt file
+
+
+
+
+Running PMS.py to determine ST and infer salmonella serotype
+-------------------------------------------------------------
+
+	
+	Run the script by using the following 2 pathways:
+
+	You can run PMS script by using the following 2 pathways:
+	1.  The script can be run by specifying a workflow, full path to the input directory and set a serotype flag to True. The input directory should contain a pair of fastq files.
+		e.g PMS.py -w salmonella-typing.1-3-3   -i <path to the input directory> -serotype True
+		Note:If using a workflow you must specify an input directory
+		
+
+
+	2. The script can be run by specifying the full path of the paired fastq files, MLST database, output directory and set a serotype flag to True.
+		e.g PMS.py -1 <full fastq paths to the fastq file> -2 <full fastq paths to the fastq file> -o  <full path to the output directory>  -st <full path to the MLST database> -serotype True
+
+	Note: If you are passing full fastq paths to the fastq -1 and fastq -2 params, you need also to pass the -st|--profile_file_directory  param, a path to a reference_dir containing 
+	reference fasta files for each gene of interest and a profiles.txt file.
+
+ 
+
+Output files
+------------
+
+1. <Sample ID>_MLST results.csv: describes allele designation and associated confidence quality metrics for each assignment
+
+2. <sample ID>_results.xml: The XML file will report
+	- Id : sample ID (sample identifier)
+	- Workflow value :  tested isolate, e.g. salmonella-typing
+	- Version : software version number
+	- MLST value : ST value
+	- Allele variant: the allele variant for each locus 
+	- QC minimum consensus depth for all loci, QC mean consensus depth for all loci and QC max percentage non consensus base value for all loci
+	- The smallest QC means consensus depth and  QC minimum consensus depth
+	- The largest  maximum percentage non consensus base values from each locus
+	- QC percentage coverage: average percentage coverage across allele length. NB: The QC average percentage coverage should always be 100%.
+
+ 	-Traffic light system is assigned based on the following cut-off values:
+	
+	I. GREEN traffic light indication is assigned if the :
+		max percentage non consensus depth =  above 15%
+		Validation test = TRUE
+		Minimum consensus depth = greater than 3
+		Percentage coverage =100
+
+	II. RED traffic lightù indication is assigned if the :
+		max percentage non consensus depthù =  below 15%
+		Validation test = FAILù
+		Minimum consensus depth = less than 3
+		Percentage coverage = less than 100
+
+	III. AMBER traffic light indication is assigned if the there is no exact fit which matches either GREEN or RED
+
+
+
+
