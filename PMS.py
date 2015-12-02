@@ -1,5 +1,6 @@
 #! /usr/bin/env python
-
+#PHE MLST software (PMS)  is a modified version of SRST version 1 script (http://sourceforge.net/projects/srst/files/?source=navbar), 
+#modification made by  Anthony.Underwood@phe.gov.uk and Rediat.Tewolde@phe.gov.uk.
 import os
 import os.path
 import sys
@@ -112,7 +113,7 @@ def main(parser, opts):
 		
 		#output_directory	
 		if not opts.output_directory:
-			opts.output_directory = opts.input_directory + '/mlst_typing_paper'
+			opts.output_directory = opts.input_directory + '/mlst_typing'
 			if not os.path.isdir(opts.output_directory): os.makedirs(opts.output_directory)
 		
 		#workflow_name

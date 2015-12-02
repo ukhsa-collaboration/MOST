@@ -1,6 +1,6 @@
 README
 ======
-PHE Modified mapping base MLST software (PMS) script is a modified version of SRST (version 1) script.  
+PHE Modified mapping base MLST script (PMS) is a modified version of SRST (version 1) script.  
 
 The purpose of this script is to assign MLST profiles and infer Salmonella serotyping to bacterial genomic sequence data.
 
@@ -30,11 +30,10 @@ biopython/python2.7/1.61
 Instruction on how to download MLST database
 --------------------------------------------
 
-1. Download profiles.txt file which is a tab-delimited text with the first column indicating the ST and subsequent columns indicating the locus variants
-that make up the ST. The first row should indicate the label or name of each locus.
+1. Download profiles.txt file : profiles.txt file contains a list of STs and their allelic profiles.
 
 2. Download loci variant sequences. One fasta file per locus saved as [name_of_locus].fas. The fasta sequence should be labelled with allele number
-(e.g. aroe-1, aroe-2) and the locus label must be separated from the allele number by a dash ("-")
+(e.g. aroc-1) and the locus label must be separated from the allele number by a dash ("-")
 NB: There is a need to make sure the locus name exactly matches the labels used in the profile.txt file.
 
 3. Download a reference file in fasta format and save the files as reference.seq.  Subsequently, index
@@ -45,7 +44,7 @@ Running PMS.py to determine ST
 ------------------------------
 	
 	usage: PMS.py [-h]
-	version 1-0, date 19/11/2015. PHE Modified mapping base MLST software (PMS) script is a modified version of SRST version 1 script (http://sourceforge.net/projects/srst/files/?source=navbar), 
+	version 1-0, date 19/11/2015. PHE Modified mapping base MLST script (PMS) is a modified version of SRST version 1 script (http://sourceforge.net/projects/srst/files/?source=navbar), 
 modification made by  Anthony.Underwood@phe.gov.uk and Rediat.Tewolde@phe.gov.uk.
 	
 	optional arguments:
@@ -138,9 +137,9 @@ Output files
 	-	QC minimum consensus depth of each locus: Minimum consensus depth across the full length of each locus. List of multiple values, one for each locus.
 	-	QC percentage coverage: Percentage coverage across allele length. NB: This value should always be 100% 
 	-	Predicted_serotype: Predicted serotype and the number of occurrences associated with the ST in the PHE/Achtmann database. (for ONLY salmonella sample)
-	-	Traffic light system: The “MLST typing software” validates the results based on coverage metrics and writes a cut-off value standard based on the “Traffic light system. 
-	The “Traffic light system” is assigned based on the following cut-off values:
-	i.	The “GREEN traffic light” indication is assigned if the : 
+	-	Traffic light system: The script validates the results based on coverage metrics and writes a cut-off value standard based on the "Traffic light system". 
+	The "Traffic light system" is assigned based on the following cut-off values:
+	i.	The "GREEN traffic light" indication is assigned if the : 
 		max percentage non consensus depth  < 15%  and
 		Complete pileup= TRUE and
 		Minimum consensus depth > 2 and

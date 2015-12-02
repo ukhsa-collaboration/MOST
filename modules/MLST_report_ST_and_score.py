@@ -1,4 +1,5 @@
-
+#PHE MLST software (PMS) is a modified version of SRST version 1 script (http://sourceforge.net/projects/srst/files/?source=navbar), 
+#modification made by  Anthony.Underwood@phe.gov.uk and Rediat.Tewolde@phe.gov.uk.
 import pickle
 import sys
 import os
