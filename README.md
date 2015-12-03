@@ -1,8 +1,8 @@
 #README
 ======
 PHE MLST software (PMS) is a modified version of SRST (version 1) script.  
-
 The purpose of this script is to assign MLST profiles and infer Salmonella serotyping to bacterial genomic sequence data.
+
 
 ##Table of content
 ----------------
@@ -15,16 +15,15 @@ The purpose of this script is to assign MLST profiles and infer Salmonella serot
 
 ##Prerequisites
 ----------------
-
-bowtie2/2.1.0
-samtools/0.1.18 ( Please only use VERSION 0.1.18 )
-emboss/6.6.0
-blast+/2.2.27
-python/2.7
-yaml/1.1
-numpy/python2.7/1.7.1
-lxml/python2.7.0/3.2.3
-biopython/python2.7/1.61
+  * bowtie2/2.1.0
+  * samtools/0.1.18 ( Please only use VERSION 0.1.18 )
+  * emboss/6.6.0
+  * blast+/2.2.27
+  * python/2.7
+  * yaml/1.1
+  * numpy/python2.7/1.7.1
+  * lxml/python2.7.0/3.2.3
+  * biopython/python2.7/1.61
 
 
 ##Instruction on how to download MLST database
@@ -40,12 +39,13 @@ NB: There is a need to make sure the locus name exactly matches the labels used 
 the reference sequence by using makeblastdb command. makeblastdb -in reference.seq -dbtype nucl  -out reference
 
 
-##Running PMS.py to determine ST
-------------------------------
+##Usage
+-------
 	
 	usage: PMS.py [-h]
-	version 1-0, date 19/11/2015. PMS is a modified version of SRST version 1 script (http://sourceforge.net/projects/srst/files/?source=navbar), 
-modification made by  Anthony.Underwood@phe.gov.uk and Rediat.Tewolde@phe.gov.uk.
+	version 1-0, date 19/11/2015. 
+
+PMS is a modified version of SRST version 1 script (http://sourceforge.net/projects/srst/files/?source=navbar, modification made by  Anthony.Underwood@phe.gov.uk and Rediat.Tewolde@phe.gov.uk.
 	
 	optional arguments:
 
@@ -81,24 +81,27 @@ modification made by  Anthony.Underwood@phe.gov.uk and Rediat.Tewolde@phe.gov.uk
                         For Salmonella samples if you want to infer serotype,
                         please provide a True value
 	
+##Running PMS.py:
 
-	You can run PMS script by using the following 2 pathways:
-	1.  The script can be run by specifying a workflow and full path to the input directory. The input directory should contain a pair of fastq files.
-		e.g PMS.py -w <workflow name>  -i < full path to the input directory>
-		Note:If you are using a workflow you must specify an input directory
+	##A. To determine ST
+	------------------------------
 
-
-	2. The script can be run by specifying the full path of the paired fastq files, MLST database and output directory
-		e.g PMS.py -1 <full path to the fastq file> -2 <full path to the fastq file>  -o   <full path to the output directory>  -st <full path to the directory containing the alleles fasta and profiles.txt files>
-		Note: If you are passing full fastq paths to the fastq -1 and fastq -2 params, you need also to pass to the -st|--profile_file_directory  param a path to a reference_dir containing 
-	reference fasta files for each gene of interest and a profiles.txt files.
+		Run the script by using the following 2 pathways:
+		1.  The script can be run by specifying a workflow and full path to the input directory. The input directory should contain a pair of fastq files.
+			e.g PMS.py -w <workflow name>  -i < full path to the input directory>
+			Note:If you are using a workflow you must specify an input directory
 
 
+		2. The script can be run by specifying the full path of the paired fastq files, MLST database and output directory
+			e.g PMS.py -1 <full path to the fastq file> -2 <full path to the fastq file>  -o   <full path to the output directory>  -st <full path to the directory containing the alleles fasta and profiles.txt files>
+			Note: If you are passing full fastq paths to the fastq -1 and fastq -2 params, you need also to pass to the -st|--profile_file_directory  param a path to a reference_dir containing 
+		reference fasta files for each gene of interest and a profiles.txt files.
 
 
-##Running PMS.py to determine ST and infer salmonella serotype
--------------------------------------------------------------
 
+
+	##B. To determine ST and infer salmonella serotype
+	--------------------------------------------------
 	
 	Run the script by using the following 2 pathways:
 
