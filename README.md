@@ -83,14 +83,12 @@ PMS is a modified version of SRST version 1 script (http://sourceforge.net/proje
 	
 ##Running PMS.py:
 
-	##A. To determine ST
+	A. To determine ST
 	------------------------------
-
 		Run the script by using the following 2 pathways:
 		1.  The script can be run by specifying a workflow and full path to the input directory. The input directory should contain a pair of fastq files.
 			e.g PMS.py -w <workflow name>  -i < full path to the input directory>
 			Note:If you are using a workflow you must specify an input directory
-
 
 		2. The script can be run by specifying the full path of the paired fastq files, MLST database and output directory
 			e.g PMS.py -1 <full path to the fastq file> -2 <full path to the fastq file>  -o   <full path to the output directory>  -st <full path to the directory containing the alleles fasta and profiles.txt files>
@@ -98,20 +96,13 @@ PMS is a modified version of SRST version 1 script (http://sourceforge.net/proje
 		reference fasta files for each gene of interest and a profiles.txt files.
 
 
-
-
-	##B. To determine ST and infer salmonella serotype
+	B. To determine ST and infer salmonella serotype
 	--------------------------------------------------
-	
 	Run the script by using the following 2 pathways:
-
-	You can run PMS script by using the following 2 pathways:
 	1.  The script can be run by specifying a workflow, full path to the input directory and set a serotype flag to True. The input directory should contain a pair of fastq files.
 		e.g PMS.py -w <workflow name>   -i <path to the input directory> -serotype True
 		Note:If using a workflow you must specify an input directory
 		
-
-
 	2. The script can be run by specifying the full path of the paired fastq files, MLST database, output directory and set a serotype flag to True.
 		e.g PMS.py -1 <full path to the fastq file> -2 <full path to the fastq file> -o  <full path to the output directory>  -st <full path to the directory containing the alleles fasta and profiles.txt files> -serotype True
 		Note: If you are passing full fastq paths to the fastq -1 and fastq -2 params, you need also to pass the -st|--profile_file_directory  param, a path to a reference_dir containing 
@@ -125,7 +116,7 @@ PMS is a modified version of SRST version 1 script (http://sourceforge.net/proje
 1. <Sample ID>_MLST results.csv: describes allele designation and associated confidence quality metrics for each assignment
 
 2. <sample ID>_results.xml: The XML file will report
-	-	sample ID : sample identifier
+	-	Sample ID : sample identifier
 	-	Workflow value :  tested isolate, e.g. salmonella-typing
 	-	Version : software version number 
 	-	MLST value : ST value 
@@ -140,19 +131,19 @@ PMS is a modified version of SRST version 1 script (http://sourceforge.net/proje
 	-	Predicted_serotype: Predicted serotype and the number of occurrences associated with the ST in the PHE/Achtmann database. (for ONLY salmonella sample)
 	-	Traffic light system: The script validates the results based on coverage metrics and writes a cut-off value standard based on the "Traffic light system". 
 	The "Traffic light system" is assigned based on the following cut-off values:
-	i.	The "GREEN traffic light" indication is assigned if the : 
-		max percentage non consensus depth  < 15%  and
-		Complete pileup= TRUE and
-		Minimum consensus depth > 2 and
-		Percentage coverage =100  and 
-		ST not "Failed(incomplete locus coverage)
+		i.	The "GREEN traffic light" indication is assigned if the : 
+			max percentage non consensus depth  < 15%  and
+			Complete pileup= TRUE and
+			Minimum consensus depth > 2 and
+			Percentage coverage =100  and 
+			ST not "Failed(incomplete locus coverage)
 
-	ii.	The RED traffic light indication is assigned if the : 
-		Complete pileup= FAIL or
- 		Percentage coverage < 100 or
-`		ST  is  "Failed(incomplete locus coverage)
+		ii.	The RED traffic light indication is assigned if the : 
+			Complete pileup= FAIL or
+ 			Percentage coverage < 100 or
+`			ST  is  "Failed(incomplete locus coverage)
 
-	iii.	The "AMBER traffic light" indication is assigned if the there is no exact fit which matches either GREEN or RED
+		iii.	The "AMBER traffic light" indication is assigned if the there is no exact fit which matches either GREEN or RED
 
 
 ## Contact
