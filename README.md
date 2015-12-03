@@ -131,17 +131,18 @@ PMS is a modified version of SRST version 1 script (http://sourceforge.net/proje
 	-	Predicted_serotype: Predicted serotype and the number of occurrences associated with the ST in the PHE/Achtmann database. (for ONLY salmonella sample)
 	-	Traffic light system: The script validates the results based on coverage metrics and writes a cut-off value standard based on the "Traffic light system". 
 	The "Traffic light system" is assigned based on the following cut-off values:
-		i.	The "GREEN traffic light" indication is assigned if the : 
-			max percentage non consensus depth  < 15%  and
-			Complete pileup= TRUE and
-			Minimum consensus depth > 2 and
-			Percentage coverage =100  and 
-			ST not "Failed(incomplete locus coverage)
 
-		ii.	The RED traffic light indication is assigned if the : 
-			Complete pileup= FAIL or
- 			Percentage coverage < 100 or
-`			ST  is  "Failed(incomplete locus coverage)
+		i.	The "GREEN traffic light" indication is assigned if the  
+			- max percentage non consensus depth  < 15%  and
+			- Complete pileup= TRUE and
+			- Minimum consensus depth > 2 and
+			- Percentage coverage =100  and 
+			- ST not "Failed(incomplete locus coverage)
+
+		ii.	The RED traffic light indication is assigned if the 
+			- Complete pileup= FAIL or
+ 			- Percentage coverage < 100 or
+`			- ST  is  "Failed(incomplete locus coverage)
 
 		iii.	The "AMBER traffic light" indication is assigned if the there is no exact fit which matches either GREEN or RED
 
