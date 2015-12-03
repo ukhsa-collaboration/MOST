@@ -1,10 +1,10 @@
-README
+#README
 ======
 PHE MLST software (PMS) is a modified version of SRST (version 1) script.  
 
 The purpose of this script is to assign MLST profiles and infer Salmonella serotyping to bacterial genomic sequence data.
 
-Table of content
+##Table of content
 ----------------
 
   * Prerequisites
@@ -13,7 +13,7 @@ Table of content
   * Output
 
 
-Prerequisites
+##Prerequisites
 ----------------
 
 bowtie2/2.1.0
@@ -27,7 +27,7 @@ lxml/python2.7.0/3.2.3
 biopython/python2.7/1.61
 
 
-Instruction on how to download MLST database
+##Instruction on how to download MLST database
 --------------------------------------------
 
 1. Download profiles.txt file : profiles.txt file contains a list of STs and their allelic profiles.
@@ -40,7 +40,7 @@ NB: There is a need to make sure the locus name exactly matches the labels used 
 the reference sequence by using makeblastdb command. makeblastdb -in reference.seq -dbtype nucl  -out reference
 
 
-Running PMS.py to determine ST
+##Running PMS.py to determine ST
 ------------------------------
 	
 	usage: PMS.py [-h]
@@ -84,22 +84,19 @@ modification made by  Anthony.Underwood@phe.gov.uk and Rediat.Tewolde@phe.gov.uk
 
 	You can run PMS script by using the following 2 pathways:
 	1.  The script can be run by specifying a workflow and full path to the input directory. The input directory should contain a pair of fastq files.
-		e.g PMS.py -w salmonella-typing.1-3-3  -i < full path to the input directory>
-		  PMS.py -w salmonella-typing.1-3-3  -i /home/rediat/mlst/123
+		e.g PMS.py -w <workflow name>  -i < full path to the input directory>
 		Note:If you are using a workflow you must specify an input directory
 
 
 	2. The script can be run by specifying the full path of the paired fastq files, MLST database and output directory
-		e.g PMS.py -1 <full path to the fastq file> -2 <full path to the fastq file>  -o   <full path to the output directory>  -st <full path to the MLST database>
-		PMS.py -1 /home/rediat/mlst/123/123.R1.fastq.gz -2 /home/rediat/mlst/123/123.R2.fastq.gz  -o  /home/rediat/mlst/123/mlst_type -st /home/rediat/python_code/PMS/1-0/MLST_data/salmonella-typing.1-3-3 
-
-	Note: If you are passing full fastq paths to the fastq -1 and fastq -2 params, you need also to pass to the -st|--profile_file_directory  param a path to a reference_dir containing 
+		e.g PMS.py -1 <full path to the fastq file> -2 <full path to the fastq file>  -o   <full path to the output directory>  -st <full path to the directory containing the alleles fasta and profiles.txt files>
+		Note: If you are passing full fastq paths to the fastq -1 and fastq -2 params, you need also to pass to the -st|--profile_file_directory  param a path to a reference_dir containing 
 	reference fasta files for each gene of interest and a profiles.txt files.
 
 
 
 
-Running PMS.py to determine ST and infer salmonella serotype
+##Running PMS.py to determine ST and infer salmonella serotype
 -------------------------------------------------------------
 
 	
@@ -107,24 +104,19 @@ Running PMS.py to determine ST and infer salmonella serotype
 
 	You can run PMS script by using the following 2 pathways:
 	1.  The script can be run by specifying a workflow, full path to the input directory and set a serotype flag to True. The input directory should contain a pair of fastq files.
-		e.g PMS.py -w salmonella-typing.1-3-3   -i <path to the input directory> -serotype True
- 		
-		PMS.py -w salmonella-typing.1-3-3  -i /home/rediat/mlst/123 -serotype True
+		e.g PMS.py -w <workflow name>   -i <path to the input directory> -serotype True
 		Note:If using a workflow you must specify an input directory
 		
 
 
 	2. The script can be run by specifying the full path of the paired fastq files, MLST database, output directory and set a serotype flag to True.
-		e.g PMS.py -1 <full path to the fastq file> -2 <full path to the fastq file> -o  <full path to the output directory>  -st <full path to the MLST database> -serotype True
-
-		PMS.py -1 /home/rediat/mlst/123/123.R1.fastq.gz -2 /home/rediat/mlst/123/123.R2.fastq.gz -o  /home/rediat/mlst/123/mlst_type -st /home/rediat/python_code/PMS/1-0/MLST_data/salmonella-typing.1-3-3  -serotype True
-
+		e.g PMS.py -1 <full path to the fastq file> -2 <full path to the fastq file> -o  <full path to the output directory>  -st <full path to the directory containing the alleles fasta and profiles.txt files> -serotype True
 		Note: If you are passing full fastq paths to the fastq -1 and fastq -2 params, you need also to pass the -st|--profile_file_directory  param, a path to a reference_dir containing 
 		reference fasta files for each gene of interest and a profiles.txt file.
 
  
 
-Output files
+##Output files
 ------------
 
 1. <Sample ID>_MLST results.csv: describes allele designation and associated confidence quality metrics for each assignment
@@ -160,5 +152,9 @@ Output files
 	iii.	The "AMBER traffic light" indication is assigned if the there is no exact fit which matches either GREEN or RED
 
 
-
+## Contact
+-----------
+Anthony.Underwood or Rediat Tewolde  
+Anthony.Underwood@phe.gov.uk 
+Rediat.Tewolde@phe.gov.uk
 
