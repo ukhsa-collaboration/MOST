@@ -45,7 +45,7 @@ the reference sequence by using makeblastdb command. makeblastdb -in reference.s
 	usage: MOST.py [-h]
 	version 1-0, date 19/11/2015. 
 
-MOST is a modified version of SRST version 1 script (http://sourceforge.net/projects/srst/files/?source=navbar, modification made by  Anthony.Underwood@phe.gov.uk and Rediat.Tewolde@phe.gov.uk.
+MOST is a modified version of SRST version 1 script (http://sourceforge.net/projects/srst/files/?source=navbar), modification made by  Anthony.Underwood@phe.gov.uk and Rediat.Tewolde@phe.gov.uk.
 	
 	optional arguments:
 
@@ -81,7 +81,7 @@ MOST is a modified version of SRST version 1 script (http://sourceforge.net/proj
                         For Salmonella samples if you want to infer serotype,
                         please provide a True value
 	
-##Running MOST.py:
+##Running MOST.py
 
 	A. To determine ST
 	------------------------------
@@ -90,32 +90,32 @@ MOST is a modified version of SRST version 1 script (http://sourceforge.net/proj
 			e.g MOST.py -w <workflow name>  -i < full path to the input directory>
 			Note:If you are using a workflow you must specify an input directory
 
-		2. The script can be run by specifying the full path of the paired fastq files, MLST database and output directory
+		2. The script can be run by specifying the full path of the paired fastq files, full path to the directory containing the alleles fasta and profiles.txt files and output directory
 			e.g MOST.py -1 <full path to the fastq file> -2 <full path to the fastq file>  -o   <full path to the output directory>  -st <full path to the directory containing the alleles fasta and profiles.txt files>
 			Note: If you are passing full fastq paths to the fastq -1 and fastq -2 params, you need also to pass to the -st|--profile_file_directory  param a path to a reference_dir containing 
-		reference fasta files for each gene of interest and a profiles.txt files.
+			reference fasta files for each gene of interest and a profiles.txt files.
 
 
 	B. To determine ST and infer salmonella serotype
 	--------------------------------------------------
-	Run the script by using the following 2 pathways:
-	1.  The script can be run by specifying a workflow, full path to the input directory and set a serotype flag to True. The input directory should contain a pair of fastq files.
-		e.g MOST.py -w <workflow name>   -i <path to the input directory> -serotype True
-		Note:If using a workflow you must specify an input directory
+		Run the script by using the following 2 pathways:
+		1.  The script can be run by specifying a workflow, full path to the input directory and set a serotype flag to True. The input directory should contain a pair of fastq files.
+			e.g MOST.py -w <workflow name>   -i <path to the input directory> -serotype True
+			Note:If using a workflow you must specify an input directory
 		
-	2. The script can be run by specifying the full path of the paired fastq files, MLST database, output directory and set a serotype flag to True.
-		e.g MOST.py -1 <full path to the fastq file> -2 <full path to the fastq file> -o  <full path to the output directory>  -st <full path to the directory containing the alleles fasta and profiles.txt files> -serotype True
-		Note: If you are passing full fastq paths to the fastq -1 and fastq -2 params, you need also to pass the -st|--profile_file_directory  param, a path to a reference_dir containing 
-		reference fasta files for each gene of interest and a profiles.txt file.
+		2. The script can be run by specifying the full path of the paired fastq files, full path to the directory containing the alleles fasta and profiles.txt files, output directory and set a serotype flag to True.
+			e.g MOST.py -1 <full path to the fastq file> -2 <full path to the fastq file> -o  <full path to the output directory>  -st <full path to the directory containing the alleles fasta and profiles.txt files> -serotype True
+			Note: If you are passing full fastq paths to the fastq -1 and fastq -2 params, you need also to pass the -st|--profile_file_directory  param, a path to a reference_dir containing 
+			reference fasta files for each gene of interest and a profiles.txt file.
 
  
 
 ##Output files
 ------------
 
-1. <Sample ID>_MLST results.csv: describes allele designation and associated confidence quality metrics for each assignment
+1. Sample_ID_MLST results.csv: describes allele designation and associated confidence quality metrics for each assignment
 
-2. <sample ID>_results.xml: The XML file will report
+2. Sample_ID_results.xml: The XML file will report
 	-	Sample ID : sample identifier
 	-	Workflow value :  tested isolate, e.g. salmonella-typing
 	-	Version : software version number 
