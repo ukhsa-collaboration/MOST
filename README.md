@@ -1,6 +1,6 @@
 #README
 ======
-PHE MLST software (PMS) is a modified version of SRST (version 1) script.  
+Metric-Oriented Sequence Typer (MOST) software is a modified version of SRST (version 1) script.  
 The purpose of this script is to assign MLST profiles and infer Salmonella serotyping to bacterial genomic sequence data.
 
 
@@ -9,7 +9,7 @@ The purpose of this script is to assign MLST profiles and infer Salmonella serot
 
   * Prerequisites
   * Instruction on how to download MLST database
-  * Running PMS
+  * Running MOST
   * Output
 
 
@@ -42,10 +42,10 @@ the reference sequence by using makeblastdb command. makeblastdb -in reference.s
 ##Usage
 -------
 	
-	usage: PMS.py [-h]
+	usage: MOST.py [-h]
 	version 1-0, date 19/11/2015. 
 
-PMS is a modified version of SRST version 1 script (http://sourceforge.net/projects/srst/files/?source=navbar, modification made by  Anthony.Underwood@phe.gov.uk and Rediat.Tewolde@phe.gov.uk.
+MOST is a modified version of SRST version 1 script (http://sourceforge.net/projects/srst/files/?source=navbar, modification made by  Anthony.Underwood@phe.gov.uk and Rediat.Tewolde@phe.gov.uk.
 	
 	optional arguments:
 
@@ -81,17 +81,17 @@ PMS is a modified version of SRST version 1 script (http://sourceforge.net/proje
                         For Salmonella samples if you want to infer serotype,
                         please provide a True value
 	
-##Running PMS.py:
+##Running MOST.py:
 
 	A. To determine ST
 	------------------------------
 		Run the script by using the following 2 pathways:
 		1.  The script can be run by specifying a workflow and full path to the input directory. The input directory should contain a pair of fastq files.
-			e.g PMS.py -w <workflow name>  -i < full path to the input directory>
+			e.g MOST.py -w <workflow name>  -i < full path to the input directory>
 			Note:If you are using a workflow you must specify an input directory
 
 		2. The script can be run by specifying the full path of the paired fastq files, MLST database and output directory
-			e.g PMS.py -1 <full path to the fastq file> -2 <full path to the fastq file>  -o   <full path to the output directory>  -st <full path to the directory containing the alleles fasta and profiles.txt files>
+			e.g MOST.py -1 <full path to the fastq file> -2 <full path to the fastq file>  -o   <full path to the output directory>  -st <full path to the directory containing the alleles fasta and profiles.txt files>
 			Note: If you are passing full fastq paths to the fastq -1 and fastq -2 params, you need also to pass to the -st|--profile_file_directory  param a path to a reference_dir containing 
 		reference fasta files for each gene of interest and a profiles.txt files.
 
@@ -100,11 +100,11 @@ PMS is a modified version of SRST version 1 script (http://sourceforge.net/proje
 	--------------------------------------------------
 	Run the script by using the following 2 pathways:
 	1.  The script can be run by specifying a workflow, full path to the input directory and set a serotype flag to True. The input directory should contain a pair of fastq files.
-		e.g PMS.py -w <workflow name>   -i <path to the input directory> -serotype True
+		e.g MOST.py -w <workflow name>   -i <path to the input directory> -serotype True
 		Note:If using a workflow you must specify an input directory
 		
 	2. The script can be run by specifying the full path of the paired fastq files, MLST database, output directory and set a serotype flag to True.
-		e.g PMS.py -1 <full path to the fastq file> -2 <full path to the fastq file> -o  <full path to the output directory>  -st <full path to the directory containing the alleles fasta and profiles.txt files> -serotype True
+		e.g MOST.py -1 <full path to the fastq file> -2 <full path to the fastq file> -o  <full path to the output directory>  -st <full path to the directory containing the alleles fasta and profiles.txt files> -serotype True
 		Note: If you are passing full fastq paths to the fastq -1 and fastq -2 params, you need also to pass the -st|--profile_file_directory  param, a path to a reference_dir containing 
 		reference fasta files for each gene of interest and a profiles.txt file.
 
