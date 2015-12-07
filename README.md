@@ -1,6 +1,6 @@
 #README
 ======
-Metric-Oriented Sequence Typer (MOST) software is a modified version of SRST (version 1) script.  
+Metric-Oriented Sequence Typer (MOST) software is a modified version of SRST (version 1) script by Dr Kat Holt and colleagues (http://sourceforge.net/projects/srst/files/).  
 The purpose of this script is to assign MLST profiles and infer Salmonella serotyping to bacterial genomic sequence data.
 
 
@@ -8,22 +8,22 @@ The purpose of this script is to assign MLST profiles and infer Salmonella serot
 ----------------
 
   * Prerequisites
-  * Instruction on how to download MLST database
+  * Instructions on how to download MLST database
   * Running MOST
   * Output
 
 
 ##Prerequisites
 ----------------
-  * bowtie2/2.1.0
-  * samtools/0.1.18 ( Please only use VERSION 0.1.18 )
-  * emboss/6.6.0
-  * blast+/2.2.27
-  * python/2.7
-  * yaml/1.1
-  * numpy/python2.7/1.7.1
-  * lxml/python2.7.0/3.2.3
-  * biopython/python2.7/1.61
+  * bowtie2 2.1.0
+  * samtools 0.1.18 ( Please only use VERSION 0.1.18 )
+  * emboss 6.6.0
+  * blast+ 2.2.27
+  * python 2.7
+  * yaml 1.1
+  * numpy 1.7.1
+  * lxml 3.2.3
+  * biopython 1.61
 
 
 ##Instruction on how to download MLST database
