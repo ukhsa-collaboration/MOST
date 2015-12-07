@@ -1,7 +1,7 @@
 #README
 ======
 Metric-Oriented Sequence Typer (MOST) software is a modified version of SRST (version 1) script by Dr Kat Holt and colleagues (http://sourceforge.net/projects/srst/files/).  
-The purpose of this script is to assign MLST profiles and infer Salmonella serotyping to bacterial genomic sequence data.
+The purpose of this script is to assign MLST profiles and infer Salmonella serotyping from bacterial genomic short read sequence data.
 
 
 ##Table of content
