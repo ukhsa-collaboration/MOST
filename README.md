@@ -29,15 +29,20 @@ The purpose of this script is to assign MLST profiles and infer Salmonella serot
 ##Instruction on how to download MLST database
 --------------------------------------------
 
-1. Download profiles.txt file : profiles.txt file contains a list of STs and their allelic profiles.
+Download ST profiles and allele sequences from the MLST databases (e.g http://pubmlst.org/data/ , http://www.mlst.net/databases/ ) and reference complete genome
 
-2. Download loci variant sequences. One fasta file per locus saved as [name_of_locus].fas. The fasta sequence should be labelled with allele number
-(e.g. aroc-1) and the locus label must be separated from the allele number by a dash ("-")
-NB: There is a need to make sure the locus name exactly matches the labels used in the profiles.txt file.
+1. ST profiles: should be tab-delimited text file and should contain a list of STs and their allelic profiles. The file should be named as profiles.txt. Please note that profiles.txt header should follow the format given in MLST databases 
+(e.g. ST TAB followed by locus names). Any extra columns after the locus column should be removed ( e.g. clonal complex)
 
-3. Download a reference file in fasta format and save the file as reference.seq.  Subsequently, index
-the reference sequence by using makeblastdb command. makeblastdb -in reference.seq -dbtype nucl  -out reference
+2. Loci variant sequences: should be in fasta format. The fasta file per locus should be named as [name_of_locus].fas (e.g. aroc.fas). 
+The fasta sequence headers should be labelled with their allele number(e.g. aroc-1) and the locus name must be separated from the allele number by a dash ("-"). 
+Note: The locus name should exactly match the labels used in the profiles.txt file.
 
+3. Reference file: should be in fasta format and  should be saved as reference.seq. reference.seq should be indexed by using the makeblastdb command: 
+	makeblastdb -in reference.seq -dbtype nucl  -out reference
+
+
+Examples are given in the MLST_data directory.
 
 ##Usage
 -------
