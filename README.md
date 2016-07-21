@@ -172,6 +172,15 @@ MOST is also available as a tool for installation into your own instance of Gala
     - To get your own Galaxy, please go to the Galaxy Wiki here [https://wiki.galaxyproject.org/Admin/GetGalaxy] and follow the instructions in the sections from "Get the Code" to "Become an Admin" (including).
 
 2. Installing MOST
+    - There is a small number of Linux packages that need to be installed on your machine, so that MOST can be installed and run propery. These are development libraries for xml which are required for the installation of the lxml Python library for reading and writing xml files.
+    - On some popular Linux distributions the commands to install them are:
+
+    ```
+    UBUNTU: sudo apt-get install libxml2-dev libxslt1-dev python-dev
+    FEDORA: sudo dnf install libxslt-devel libxml2-devel python-devel
+    OPENSUSE: sudo zypper install libxml2-devel libxslt-devel python-devel
+    ```
+
     - Make sure that you can access ftp sites from the command line running your Galaxy server. This is normally enabled by default, but sometimes requires an additional proxy setting. Try this command:
 
     ```
@@ -196,9 +205,9 @@ MOST is also available as a tool for installation into your own instance of Gala
     - Click ‘Install’.
     - You will be presented with a long list of packages that need to be installed. This will take a while. Wait until everything is green. If nothing happens for a little while, try reloading the page.
 
-In your admin tool panel the menu item “Manage installed tools” was added. You can check the status of your installed tools there.
+    In your admin tool panel the menu item “Manage installed tools” was added. You can check the status of your installed tools there.
 
-You also need to install the "data_manager_phemost" for downloading MLST reference data from pubmlst.org for your organism of choice. This is done as above for the "phemost" tool.
+    You also need to install the "data_manager_phemost" for downloading MLST reference data from pubmlst.org for your organism of choice. This is done as above for the "phemost" tool.
 
 3. Use MOST in Galaxy
 
