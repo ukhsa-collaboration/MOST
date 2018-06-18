@@ -15,7 +15,7 @@ The purpose of this script is to assign MLST profiles and infer Salmonella serot
 
 ##Prerequisites
 ----------------
-  * bowtie2 2.1.0
+  * bowtie2 2.1.0 or later
   * samtools 0.1.18 ( Please only use VERSION 0.1.18 )
   * emboss 6.6.0
   * blast+ 2.2.27
