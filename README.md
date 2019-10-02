@@ -1,10 +1,10 @@
-#README
+#  README
 ======
 Metric-Oriented Sequence Typer (MOST) software is a modified version of SRST (version 1) script by Dr Kat Holt and colleagues (http://sourceforge.net/projects/srst/files/).
 The purpose of this script is to assign MLST profiles and infer Salmonella serotyping from bacterial genomic short read sequence data.
 
 
-##Table of content
+## Table of content
 ----------------
 
   * Prerequisites
@@ -13,7 +13,7 @@ The purpose of this script is to assign MLST profiles and infer Salmonella serot
   * Output
 
 
-##Prerequisites
+## Prerequisites
 ----------------
   * bowtie2 2.1.0
   * samtools 0.1.18 ( Please only use VERSION 0.1.18 )
@@ -26,7 +26,7 @@ The purpose of this script is to assign MLST profiles and infer Salmonella serot
   * biopython 1.61
 
 
-##Instruction on how to download MLST database
+## Instruction on how to download MLST database
 --------------------------------------------
 
 Download ST profiles and allele sequences from the MLST databases (e.g http://pubmlst.org/data/ , http://www.mlst.net/databases/ ) and reference complete genome
@@ -44,7 +44,7 @@ Note: The locus name should exactly match the labels used in the profiles.txt fi
 
 Examples are given in the MLST_data directory.
 
-##Usage
+## Usage
 -------
 
 	usage: MOST.py [-h]
@@ -115,7 +115,7 @@ MOST is a modified version of SRST version 1 script (http://sourceforge.net/proj
 
 
 
-##Output files
+## Output files
 ------------
 
 1. Sample_ID_MLST results.csv: describes allele designation and associated confidence quality metrics for each assignment
